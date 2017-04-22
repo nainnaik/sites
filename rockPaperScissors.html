@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8"><!-- Specify the character encoding for the HTML document-->
+		
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!--makes browsers render all elements more consistently and in line with modern standards-->
+		<link herf="http://necolas.github.com/normalize.css/">
+
+		<!-- CSS -->
+	    <link href='http://fonts.googleapis.com/css?family=Lato:100,300' rel='stylesheet' type='text/css'>
+
+	    <!-- bootstrap -->
+		<link href="C:\Users\Nayana\WebDevlopment\bootstrap-3.3.4-dist\css\bootstrap.css" rel="stylesheet">
+		<link href="C:\Users\Nayana\WebDevlopment\bootstrap-3.3.4-dist\css\bootstrap.min.css" rel="stylesheet">
+	<title>Rock Paper Scissors</title>
+</head>
+<body>
+<h1> Do you choose rock,paper or scissors?</h1>
+<br>
+
+<div class="container">
+					<img class="rock" src="../webpagesForResume/rock.jpg" style="display: inline;" width="100px">
+					<img class="paper" src="../webpagesForResume/paper.jpg" style="display: inline;" width="100px">
+					<img class="scissors" src="../webpagesForResume/scissor.jpg" style="display: inline;" width="100px">
+</div>
+
+<script>
+(function(){
+var myBody=document.getElementsByTagName("h1")[0];
+var container=document.getElementsByTagName('div');
+var computerChoice;
+function doGuess(){
+var question= prompt("Do you choose rock,paper or scissors?");
+var userChoice;
+
+	userChoice=question;
+
+		var computerChoice=Math.random();
+		if (computerChoice < 0.34) {
+			computerChoice = "rock" ;
+
+			
+		} else if(computerChoice <= 0.67) {
+			computerChoice = "paper";
+
+		} else{computerChoice = "scissors";}		
+
+	if (computerChoice === userChoice){
+	     myBody.innerHTML="This is tie!!!"+' '+ " Computer's Choice : " + computerChoice+ ' '+'userInput:  '+userChoice;	         
+		 return true;
+	}
+	else{
+		
+		myBody.innerHTML=  "Computer's choice is : " + computerChoice+  '  '+'UserInput is :  '+userChoice ;
+
+	}
+		
+		
+}	doGuess();
+
+})();
+</script>
+
+</body>
+</html>
+<script>
+
+// function compare(){
+//     if (userChoice === computerChoice){
+//         console.log("The result is a tie!") ;
+//         }
+//     else if(userChoice ===  "rock"){
+        
+//         if (computerChoice === "scissor"){
+//         console.log("rock wins");
+//         } 
+//         else {
+//             console.log("paper Wins");
+//             }    
+//     }
+// }
+
+
+</script>
+		

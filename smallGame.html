@@ -1,0 +1,83 @@
+<!DOCTYPE HTML>
+<html lang="en"><!-- information of what TYPE of document to acept-->
+	<head>	<!--information about the document-->
+			<meta charset="UTF-8"><!-- Specify the character encoding for the HTML document-->
+		
+		<!--title for document -->
+		<title>COLOR GAME</title>
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!--makes browsers render all elements more consistently and in line with modern standards-->
+		<link herf="http://necolas.github.com/normalize.css/">
+
+		<!-- CSS -->
+	    <link href='http://fonts.googleapis.com/css?family=Lato:100,300' rel='stylesheet' type='text/css'>
+
+	    <!-- bootstrap -->
+		<link href="C:\Users\Nayana\WebDevlopment\bootstrap-3.3.4-dist\css\bootstrap.css" rel="stylesheet">
+		<link href="C:\Users\Nayana\WebDevlopment\bootstrap-3.3.4-dist\css\bootstrap.min.css" rel="stylesheet">
+	  
+		
+		
+	</head>
+	<body><!-- describes the visible page content-->
+
+
+	<script>
+
+	var randomColor;
+	var target;
+	var guess_input; 
+	var guess_text;
+	var finished = false;
+	var guesses=0;
+	var colorList=["blue","cyan","gold","gray","magneta","orange","red","yellow","green","brown","violet","apricot","navy","teal","turquoise"];
+		
+		function do_game(){
+
+			//random color 
+	 		randomColor=colorList[Math.floor(Math.random()*colorList.length-1)]; 		
+	 		target=randomColor; 
+	 		
+	 			
+
+	 		while(!finished){
+	 			//if the guess input is not equal to target(need to check with check_guess() ) this will continue to ptompt. 
+				guess_text =prompt("I am thinking of a color." +" "+ colorList + "  \n " +"what is the color?");
+				guess_input= guess_text.toLowerCase();
+				guesses+=1;
+				finished = check_guess();
+			}
+
+		}
+	 	  function check_guess(){	 	  
+
+	 		 if (colorList.indexOf(guess_input) === -1) {
+	                alert("Sorry, I don't recognize your color. " + " "+"Please try again.");
+	                return false;
+	            }
+	            
+	 			if (guess_input < target) {
+			 	alert("Alphabetically lower than my color");
+			 	return false;
+				}	
+
+				if (guess_input > target) {
+			 	alert("Alphabetically higher than my color");
+			 	return false;
+				}
+				if (guess_input === target){
+					 myBody=document.getElementsByTagName("body")[0];
+	               	 myBody.style.background = target ;
+	               	 alert ("Good One!! Your color game is over in"+ " "+ guesses +" "+"guesses");					
+					return true;
+				}
+				 
+			}do_game();
+
+	</script>
+	</body>
+
+</html>
+
+

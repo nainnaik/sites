@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="C:/Users/Nayana/Desktop/Resume/draftsites/noframework/css/normal.css"/>
+	<title> Responsive - css </title>
+
+	<style>
+		html{
+			box-sizing: border-box;
+		}
+		img, embed, object, video {
+ 		 max-width: 100%;
+		}
+		.container{
+			width:100%;
+			display: -webkit-flex;
+    		display: flex;
+    		-webkit-flex-wrap: wrap;
+    		flex-wrap: wrap;		
+
+		}
+		.box{
+			width:100%;
+			height:150px;;
+			text-align: center;	
+		}	
+		.green{			
+			background-color: #BAF55B;	
+			order:1;	
+		}
+		.blue{
+			background-color: blue;
+			width:50%;
+			order:2;
+		}
+		.beige{
+			background-color: beige;
+			width:50%;
+			order:3;
+		}
+		.red{
+			background-color: red;
+			width:100%;
+			order:4;
+		}
+		.pink{
+			background-color: pink;
+		}
+		 
+		@media screen and (min-width:868px){
+			.pink{
+		 		width:100%;
+		 		background-color: pink;	
+		 		order:1;		 			 		
+			}
+			.beige{width:50%;
+		 		order:2;		 		
+			}			
+			.blue{width:50%;
+		 		order:3;
+			}	 
+		 		 					 	
+			.green {
+				width:100%;
+		 		order:-5;
+		 	}		 	
+		}
+		@media screen and (max-width:600px){
+			.pink{
+		 		width:100%;
+		 		background-color: pink;	
+		 		order:1;		 			 		
+			}
+			.beige{width:50%;
+		 		order:2;		 		
+			}
+			
+			.blue{width:50%;
+		 		order:3;
+			}		 		 					 	
+			.red {
+				width:100%;
+		 		order:-5;
+		 	}
+
+		}
+		@media screen and (max-width:400px){
+
+			.box{				
+				transform: scale(-1);
+			}
+			.beige{
+				width:100%;	
+				
+			}			
+			.blue{width:100%;
+		 		order:-5;
+		 		
+			}
+			.red{
+				order:5;				
+
+			}
+		}
+
+
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="box green">green</div>
+		<div class="container">
+			<div class="box blue">blue</div>
+			<div class="box beige">beige</div>
+		</div>
+		<div class="box red">red</div>
+		<div class="box pink">pink</div>		
+	</div>
+
+
+</body>
+</html>
