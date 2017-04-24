@@ -22,7 +22,7 @@
     var recipes=[
                         {
                             name:'SPECIAL KABAB PLATTER',
-                            image:'images/kababPlatter.jpg',
+                            image:'kababPlatter.jpg',
                             category:'Appitizer',
                             lable:'hot',
                             price:'10.99',
@@ -32,7 +32,7 @@
 
                         {
                             name:'PANEER MAKHANI',
-                            image:'images/paneerMakhani.jpg',
+                            image:'paneerMakhani.jpg',
                             category:'Mains',
                             lable:'',
                             price:'4.99',
@@ -43,7 +43,7 @@
                         {
 
                             name:'VEGETABLE PAKORA',
-                            image:'images/vegPlatter.jpg',
+                            image:'vegPlatter.jpg',
                             category:'Appitizer',
                             lable:'New',
                             price:'1.99',
@@ -53,7 +53,7 @@
                         
                         {
                             name:'GULAB JAMUN',
-                            image:'images/gulabJamun.jpg',
+                            image:'gulabJamun.jpg',
                             category:'Dessert',
                             lable:'sweet',
                             price:'4.99',
@@ -75,7 +75,7 @@
 
                                                 $routeProvider
                                                     .when('/',{
-                                                        templateUrl: '../Resume/draftsites/menu.html',           
+                                                        templateUrl: 'menu.html',           
                                                         controller: 'RecipeController'})               
                                                     .otherwise({ redirectTo:'/' });
                                             }
