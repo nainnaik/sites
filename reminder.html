@@ -1,0 +1,241 @@
+<!doctype html>
+<html>
+ 
+ <head>
+		<link herf="http://necolas.github.com/normalize.css/">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		
+
+<style> 
+	
+	img,embed,object,video{max-width:100%} /*prevent horizontal scrolling and overflow */
+	header{
+		width:100%;
+	}
+	
+ 	
+	form{
+		width:100%;
+		background-color: #dddddd;
+		padding:10px;
+		border-radius: 4px;	 
+	}
+
+	input[type=text],input[type=date],input[type=number]{    	
+	   	width: 100%;
+	    padding: 12px 20px;
+	    margin: 8px 0;
+	    display: inline-block;
+	    border: 1px solid #ccc;
+	    border-radius: 4px;
+	    box-sizing: border-box;
+	}
+
+	table{
+		width:100%;
+		margin-top:10px;
+		padding:25px;
+		border-radius: 4px;
+		border: 1px solid black;
+		border-collapse: collapse;
+
+	}
+	th,td,tr{
+		border: 1px solid black;
+		text-align: left;
+		padding:4px;
+		position:relative;
+		oevrflow-x:auto;
+	}
+	tbody{
+		width:100%;
+	}
+	
+
+
+	@media screen and (max-width:600px){
+	html {
+		    font-family: "Lucida Sans", sans-serif;      
+	}
+	*{box-sizing:border-box;}
+
+	.container{		
+		width:100%;
+		display: flex;
+		flex-wrap:flex;
+	}
+
+	img,embed,object,video{max-width:100%} /*prevent horizontal scrolling and overflow */
+	header{
+		width:100%;
+	}
+	h1{
+	   background-color: #dddddd;
+		padding: 10px;   
+	   font-size: 38px;
+	   text-align:center;
+	   text-transform: uppercase;
+	   color:gray;
+	   width:100%;
+	}	
+	nav {
+		display:block;
+
+
+	}
+
+	#addDetails{
+		background-color: green;
+
+	}
+	ul li{
+		display:inline-block;
+	}
+
+	form{
+		width:100%;
+		background-color:;
+		padding:10px;
+		border-radius: 4px;	 
+	}
+
+	input[type=text],input[type=date],input[type=number]{    	
+   	width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+	}
+
+	table{
+		width:100%;
+		margin-top:10px;
+		padding:25px;
+		border-radius: 4px;
+		border: 1px solid black;
+		border-collapse: collapse;
+
+	}
+	th,td,tr{
+		border: 1px solid black;
+		text-align: left;
+		padding:4px;
+		position:relative;
+		oevrflow-x:auto;
+	}
+	tbody{
+		width:100%;
+	}
+	
+	
+
+	
+		
+
+	}
+}
+
+</style>
+		
+ </head>
+ <body>
+ <header>
+ 	<section id="tableImg" class="container" name= "birthdayImg" >	   
+	    <h1 class= "col-10" id= "maultiHead"> Enter Multiple Event</h1>
+	</section>
+  
+    <section>
+      <nav>
+         <ul>          
+          <li> home</li>
+          <li>contact </li>
+          
+         </ul> 
+      </nav>
+    </section>
+  </header>
+
+	<section id="multiheader1"> <h2>Enter multiple Birthdate</h2></section>
+	<section class="container">
+
+		<form id="enDetail" action="#">
+			Person's Name <input id = "name" placeholder="Name" type ="text" required > 
+			Event Date <input id="eDate" type ="date" placeholder="Event date" required>
+			Mobile <input id="mobile" type ="number" placeholder="Mobile Number" required > 
+			Group Name <input id = "gName" type ="text" placeholder="Enter GroupName" required>
+
+			<input type="submit"  id="addDetails" value="Add and Save" required > 
+		</form>
+    </section>
+
+    <section class="container">
+
+			<table id ="multidata" style="border: 1px solid black"> 
+				<thead>
+					<tr>
+						 <td >Name</td>
+						 <td >Eventdate</td>
+						 <td > Mobile Number</td>
+						 <td > Group Name</td>
+					</tr>
+				</thead>
+				<tbody>
+					
+				</tbody>
+			</table>		
+	</section>
+
+			
+					
+
+<footer>
+	<h4>&copy; nainjay. All rights reserved.</h4>
+</footer>
+
+<script type="text/javascript">
+$(document).ready(function(){
+
+	//the folowing code will add a roww
+  	$('#addDetails').click(function() {
+      
+     	var toAddName = $("input[id='name']").val();
+     	var toAddeventdt=$("input[id='eDate']").val();
+     	
+     	var toAddMobi=$("input[id='mobile']").val();
+     	var toAddGname=$("input[id='gName']").val();
+     	var newcontent="<tr><td>" + toAddName + "</td><td>" + toAddeventdt + "</td><td>" + toAddMobi + "</td><td>" + toAddGname + "</td><td><input type='submit' class='del'  id='delete' value='delete'> </td></tr>";
+      
+       
+       //no field values must be blank
+       if(toAddName !== "" && toAddeventdt !== "" && toAddMobi !== "" && toAddGname !== "") {	
+       		$("tbody:last-child").append(newcontent);
+       	}		 
+       		
+
+    	 });
+        // after appending data in tbody clear input field  
+
+
+        
+    
+  	//this code will delete a row from the table
+    $(document).on('click','.del',function(){
+       		$(this).closest('tr').remove(); 
+
+    }); 
+
+});//end of ready 
+
+
+
+</script>
+
+
+
+	
+ </body>
+
+</html>
